@@ -27,7 +27,9 @@ acc_data
 
 ## ----define_region------------------------------------------------------------
 acc_data <- define_region(
-  data = acc_data, start_time = "15:45:00", end_time = "15:46:00"
+  data = acc_data,
+  start_time = "2021-04-06 15:45:00",
+  end_time = "2021-04-06 15:46:00"
 )
 acc_data
 
