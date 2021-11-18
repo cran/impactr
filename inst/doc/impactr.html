@@ -374,11 +374,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the base R pipe operator</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="fu">read_acc</span>(<span class="fu">impactr_example</span>(<span class="st">&quot;hip-raw.csv&quot;</span>)) <span class="sc">|</span><span class="er">&gt;</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify_parameters</span>(<span class="at">acc_placement =</span> <span class="st">&quot;hip&quot;</span>, <span class="at">subj_body_mass =</span> <span class="dv">78</span>) <span class="sc">|</span><span class="er">&gt;</span></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter_acc</span>() <span class="sc">|</span><span class="er">&gt;</span></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">use_resultant</span>() <span class="sc">|</span><span class="er">&gt;</span></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">find_peaks</span>(<span class="at">vector =</span> <span class="st">&quot;resultant&quot;</span>) <span class="sc">|</span><span class="er">&gt;</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="fu">read_acc</span>(<span class="fu">impactr_example</span>(<span class="st">&quot;hip-raw.csv&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify_parameters</span>(<span class="at">acc_placement =</span> <span class="st">&quot;hip&quot;</span>, <span class="at">subj_body_mass =</span> <span class="dv">78</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter_acc</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">use_resultant</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">find_peaks</span>(<span class="at">vector =</span> <span class="st">&quot;resultant&quot;</span>) <span class="sc">|&gt;</span></span>
 <span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">predict_loading</span>(</span>
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">outcome =</span> <span class="st">&quot;grf&quot;</span>,</span>
 <span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">vector =</span> <span class="st">&quot;resultant&quot;</span>,</span>
