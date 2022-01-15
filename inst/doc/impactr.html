@@ -143,8 +143,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p>impactr is an <a href="https://www.r-project.org">R</a> package whose main goal is to process raw accelerometer data into mechanical loading-related variables. It contains functions to read the raw data, process the accelerometer signal and to predict some mechanical loading variables such as ground reaction force (GRF) and loading rate (LR). Currently it only works with raw accelerometer data from triaxial ActiGraph accelerometers stored as csv files, but with plans to expand the support for more accelerometer brands and file types.</p>
 <p>This vignette provides a short introduction on how to use impactr, guiding you through each of the functions necessary to operate it. If anything is not clear in the package documentation, please let us know by creating an issue in GitHub following this <a href="https://github.com/verasls/impactr/issues">link</a>.</p>
-<div id="walkthrough" class="section level2">
-<h2>Walkthrough</h2>
+<div id="walk-through" class="section level2">
+<h2>Walk-through</h2>
 <p>Before we begin, the package needs to be installed and then loaded into your R session.</p>
 <p>If you don’t have much experience using R, we recommend you to install the latest impactr release from <a href="https://cran.r-project.org">CRAN</a>, by running:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;impactr&quot;</span>)</span></code></pre></div>
@@ -326,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="predict_loading" class="section level3">
 <h3>predict_loading()</h3>
-<p>Finally, the <code>predict_loading()</code> is used to predict the mechanical loading variables based on the acceleration signal. Currently, impactr provides models to predict ground reaction force (GRF) and loading rate (LR) of the resultant vector and its vertical component with a models validated in walking and running activities. The <code>outcome</code>, <code>vector</code> and <code>model</code> arguments are used to control this parameters. More details regarding the values accepted by these paremeters can be found in the function documentation (<code>help(predict_loading)</code>).</p>
+<p>Finally, the <code>predict_loading()</code> is used to predict the mechanical loading variables based on the acceleration signal. Currently, impactr provides models to predict ground reaction force (GRF) and loading rate (LR) of the resultant vector and its vertical component with a models validated in walking and running activities. The <code>outcome</code>, <code>vector</code> and <code>model</code> arguments are used to control this parameters. More details regarding the values accepted by these parameters can be found in the function documentation (<code>help(predict_loading)</code>).</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict_loading</span>(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> acc_data,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="st">&quot;grf&quot;</span>,</span>
