@@ -26,6 +26,7 @@
     </style>
 
 
+
 <style type="text/css">
   code {
     white-space: pre;
@@ -181,7 +182,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2021-04-06 15:43:00 0.332 -0.926 0.109</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2021-04-06 15:43:00 0.363 -1.02  0.168</span></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2021-04-06 15:43:00 0.418 -0.996 0.387</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 29,990 more rows</span></span></code></pre></div>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 29,990 more rows</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 <p>It shows the data with four columns – one for the timestamp and one for each of the accelerometer axes (<em>X</em>, <em>Y</em> and <em>Z</em>) – and a 6-line header with metadata. Among this metadata is the accelerometer data start time and sampling frequency, extracted from the csv file header, and also information about the accelerometer placement and the subject body mass, that are needed for applying the mechanical loading prediction models. It also shows information about the filter applied to the accelerometer signal and the data dimensions (30000 rows and 4 columns in this case).</p>
 <p>Remember that, when using this function to read your own data, you need to specify the correct path to it. For example, if you have a file named <code>id_001_raw_acceleration.csv</code> inside the <code>accelerometer_data</code> folder in your <code>Desktop</code>, you need to write the path to it:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For macOS or Linux</span></span>
@@ -216,7 +218,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2021-04-06 15:45:00 -0.004 -1.08 0.152</span></span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2021-04-06 15:45:00  0.008 -1.15 0.176</span></span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2021-04-06 15:45:00  0.039 -1.20 0.195</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 5,990 more rows</span></span></code></pre></div>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 5,990 more rows</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 </div>
 <div id="specify_parameters" class="section level3">
 <h3>specify_parameters()</h3>
@@ -243,7 +246,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2021-04-06 15:45:00 -0.004 -1.08 0.152</span></span>
 <span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2021-04-06 15:45:00  0.008 -1.15 0.176</span></span>
 <span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2021-04-06 15:45:00  0.039 -1.20 0.195</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 5,990 more rows</span></span></code></pre></div>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 5,990 more rows</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 <p>The supported accelerometer placements are “ankle”, “back” or “hip” and the body mass must be given as kilograms. Notice that these informations are added to the data header.</p>
 </div>
 <div id="filter_acc" class="section level3">
@@ -269,7 +273,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2021-04-06 15:45:00 -0.00753  -1.10  0.148 </span></span>
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2021-04-06 15:45:00  0.00602  -1.14  0.166 </span></span>
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2021-04-06 15:45:00  0.0510   -1.19  0.206 </span></span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 5,990 more rows</span></span></code></pre></div>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 5,990 more rows</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 <p>This function lets you select the order, cut-off frequency and type of the Butterworth filter (more details in the function documentation <code>help(filter_acc)</code>). To better reproduce the conditions in which the models validation were performed, we suggest you not to change the default values of <code>order</code>, <code>cutoff</code> and <code>type</code> arguments, unless you have a strong reason to do so.</p>
 </div>
 <div id="use_resultant" class="section level3">
@@ -295,7 +300,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2021-04-06 15:45:00 -0.00753  -1.10  0.148  1.11 </span></span>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2021-04-06 15:45:00  0.00602  -1.14  0.166  1.15 </span></span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2021-04-06 15:45:00  0.0510   -1.19  0.206  1.21 </span></span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 5,990 more rows</span></span></code></pre></div>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 5,990 more rows</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 <p>This function add a new column <code>acc_R</code> with the resultant acceleration values. We suggest to utilise this function after <code>filter_acc()</code>, otherwise the resultant vector computation will use the non-filtered acceleration signal.</p>
 </div>
 <div id="find_peaks" class="section level3">
@@ -321,7 +327,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2021-04-06 15:45:07               1.96</span></span>
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2021-04-06 15:45:08               1.37</span></span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2021-04-06 15:45:08               1.86</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 22 more rows</span></span></code></pre></div>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 22 more rows</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 <p>As with <code>filter_acc()</code>, <code>find_peaks()</code> default values of the minimum height (<code>min_height</code>) and distance (<code>min_dist</code>) of the peaks are set to replicate the values used in the calibration study. You should only change them if you have a strong reason to.</p>
 </div>
 <div id="predict_loading" class="section level3">
@@ -341,17 +348,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # Data dimensions:         32 × 3</span></span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    timestamp           resultant_peak_acc resultant_peak_grf</span></span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;dttm&gt;                           &lt;dbl&gt;              &lt;dbl&gt;</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 2021-04-06 15:45:00               1.32              1387.</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 2021-04-06 15:45:01               1.36              1392.</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 2021-04-06 15:45:04               1.30              1384.</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 2021-04-06 15:45:04               2.32              1521.</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 2021-04-06 15:45:05               1.50              1412.</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 2021-04-06 15:45:06               1.68              1435.</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 2021-04-06 15:45:06               1.51              1412.</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2021-04-06 15:45:07               1.96              1473.</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2021-04-06 15:45:08               1.37              1393.</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2021-04-06 15:45:08               1.86              1459.</span></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 22 more rows</span></span></code></pre></div>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 2021-04-06 15:45:00               1.32              1466.</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 2021-04-06 15:45:01               1.36              1469.</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 2021-04-06 15:45:04               1.30              1464.</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 2021-04-06 15:45:04               2.32              1543.</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 2021-04-06 15:45:05               1.50              1480.</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 2021-04-06 15:45:06               1.68              1494.</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 2021-04-06 15:45:06               1.51              1480.</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2021-04-06 15:45:07               1.96              1515.</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2021-04-06 15:45:08               1.37              1470.</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2021-04-06 15:45:08               1.86              1508.</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 22 more rows</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 <p>As can be seen above, <code>predict_loading()</code> adds columns to the supplied <code>data</code> corresponding to the <code>outcome</code> and <code>vector</code> specified in the arguments. Note that GRF are expressed as newton (N) and LR as newton per second (N·s<sup>-1</sup>)</p>
 </div>
 </div>

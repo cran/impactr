@@ -43,6 +43,20 @@ test_that("error handling works", {
   )
 })
 
+test_that("no warnings are generated when trying to save a plot", {
+  if (!has_accdata) {
+    skip("`accdata` not available")
+  }
+
+  attributes(data)$filename <- "Sáv"
+  plot_filename <- tempfile(fileext = ".pdf")
+  expect_warning(
+    remove_nonwear(data, save_plot = plot_filename),
+    regexp = NA
+  )
+  if (file.exists(plot_filename)) file.remove(plot_filename)
+})
+
 test_that("non-wear detection works", {
   if (!has_accdata) {
     skip("`accdata` not available")

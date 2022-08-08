@@ -75,11 +75,13 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' # Ensure that {accdata} package is available before running the example.
 #' # If it is not, run install_accdata() to install the required package.
 #' if (requireNamespace("accdata", quietly = TRUE)) {
 #'   data <- import_dataset("daily_acc_3d")
 #'   remove_nonwear(data)
+#' }
 #' }
 remove_nonwear <- function(data,
                            window1 = 60,
@@ -214,18 +216,34 @@ plot_nonwear <- function(data,
   ymin <- min(resultant)
   ymax <- round(max(resultant) + (max(resultant) - 1) * 2, 1)
 
+  plot_title <- attributes(data)$filename
+  if (nchar(plot_title) > 50) {
+    plot_title <- paste(
+      substr(plot_title, 1, 23),
+      "...",
+      substr(plot_title, nchar(plot_title) - 23, nchar(plot_title))
+    )
+  }
+
   if (is.character(save_plot)) {
     grDevices::pdf(save_plot, width = 7, height = 7)
   }
   graphics::par(mar = c(8, 5, 5, 5), xpd = TRUE)
-  plot(
-    days_axis, resultant, type = "l",
-    xlim = c(0, day_end),
-    ylim = c(1, ymax),
-    xaxp = c(0, day_end, day_end),
-    main = attributes(data)$filename,
-    xlab = "Days",
-    ylab = "Acceleration (g)"
+  withCallingHandlers(
+    plot(
+      days_axis, resultant, type = "l",
+      xlim = c(0, day_end),
+      ylim = c(1, ymax),
+      xaxp = c(0, day_end, day_end),
+      main = plot_title,
+      xlab = "Days",
+      ylab = "Acceleration (g)"
+    ),
+    warning = function(cnd) {
+      if (any(grepl("mbcsToSbcs", cnd))) {
+        invokeRestart("muffleWarning")
+      }
+    }
   )
   if (length(start) > 0) {
     graphics::rect(
@@ -376,7 +394,7 @@ summarise_nonwear <- function(data,
   )
   valid_day <- rep("No", length(weekday))
   valid_day[which(valid_hours >= min_hour_crit)] <- "Yes"
-  valid_observation <- ifelse(
+  valid_file <- ifelse(
     length(which(valid_day == "Yes")) >= min_day_crit, "Yes", "No"
   )
 
@@ -385,7 +403,7 @@ summarise_nonwear <- function(data,
     date, weekday, measurement_day,
     recorded_hours, valid_hours,
     min_hour_crit, min_day_crit,
-    valid_day, valid_observation
+    valid_day, valid_file
   )
   if (is.character(save_summary)) {
     if (file.exists(save_summary)) {
@@ -405,7 +423,7 @@ summarise_nonwear <- function(data,
     )
   }
 
-  if (valid_observation == "No") {
+  if (valid_file == "No") {
     msg <- glue::glue(
       "Data from file `{attributes(data)$filename}` is not valid as \\
       the number of valid days ({length(which(valid_day == \"Yes\"))}) is \\
