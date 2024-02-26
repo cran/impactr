@@ -20,6 +20,8 @@ new_impactr_peaks(
 \arguments{
 \item{x}{A data frame.}
 
+\item{filename}{A character string containing the file name.}
+
 \item{start_date_time}{A scalar of class \code{POSIXct}.}
 
 \item{samp_freq}{A numerical scalar}
@@ -34,7 +36,7 @@ new_impactr_peaks(
 
 \item{curve_start}{A numerical vector}
 
-\item{acc_signal:}{A numeric vector}
+\item{acc_signal}{A numeric vector}
 }
 \value{
 An object of the \code{impactr_peaks} class.

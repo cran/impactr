@@ -1,6 +1,7 @@
 #' Constructor for impactr_data object
 #'
 #' @param x A data frame.
+#' @param filename A character string containing the file name.
 #' @param start_date_time A scalar of class \code{POSIXct}.
 #' @param samp_freq A numerical scalar
 #' @param acc_placement A character scalar
@@ -36,6 +37,7 @@ new_impactr_data <- function(x,
 #' Constructor for impactr_peaks object
 #'
 #' @param x A data frame.
+#' @param filename A character string containing the file name.
 #' @param start_date_time A scalar of class \code{POSIXct}.
 #' @param samp_freq A numerical scalar
 #' @param acc_placement A character scalar
@@ -43,7 +45,7 @@ new_impactr_data <- function(x,
 #' @param filter_type A character scalar
 #' @param peaks_idx A numerical vector
 #' @param curve_start A numerical vector
-#' @param acc_signal: A numeric vector
+#' @param acc_signal A numeric vector
 #'
 #' @return An object of the `impactr_peaks` class.
 #'

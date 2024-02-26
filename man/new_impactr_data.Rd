@@ -17,6 +17,8 @@ new_impactr_data(
 \arguments{
 \item{x}{A data frame.}
 
+\item{filename}{A character string containing the file name.}
+
 \item{start_date_time}{A scalar of class \code{POSIXct}.}
 
 \item{samp_freq}{A numerical scalar}
